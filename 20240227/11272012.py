@@ -25,5 +25,32 @@ for entry in feed.entries:
 
     #印出 分隔線
     print("-" * 80)
-    
+
+    #幫我找是否有含桃園的新聞標題
+    if "桃園" in entry.title:
+        print("桃園新聞:", entry.title)
+#幫我把列印出之標題依序存入一個excel檔案，檔名為11272012.xlsx
+import openpyxl
+wb = openpyxl.Workbook()
+sheet = wb.active
+sheet.title = "News"
+sheet["A1"] = "Title"
+sheet["B1"] = "Summary"
+sheet["C1"] = "Link"
+#設定行數
+row = 2
+# 遍歷每一個 'entry'
+for entry in feed.entries:
+    sheet["A" + str(row)] = entry.title
+    sheet["B" + str(row)] = entry.summary
+    sheet["C" + str(row)] = entry.link
+    row += 1
+#存檔
+wb.save("11272012.xlsx")
+#關閉檔案
+wb.close()
+#印出完成
+print("Done!")
+# Path: 20240227/11272012.py
+
 
