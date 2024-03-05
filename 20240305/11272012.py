@@ -53,12 +53,11 @@ plt.xlabel("日期")
 # 設定 y 軸標題為 "油價"
 plt.ylabel("油價")
 
-# 使用 matplotlib x,y 散佈圖 , x 軸是日期 , 後面四個欄位是 油價 ，分別是 92無鉛汽油,95無鉛汽油,98無鉛汽油,超級柴油 
-import matplotlib.pyplot as plt
-plt.plot(df2[df2.columns[0]], df2[df2.columns[1]], label='92無鉛汽油')
-plt.plot(df2[df2.columns[0]], df2[df2.columns[2]], label='95無鉛汽油')
-plt.plot(df2[df2.columns[0]], df2[df2.columns[3]], label='98無鉛汽油')
-plt.plot(df2[df2.columns[0]], df2[df2.columns[4]], label='超級柴油')
+# 使用 matplotlib x,y 折線圖 , x 軸是日期 , 後面四個欄位是 油價 ，分別是 92無鉛汽油,95無鉛汽油,98無鉛汽油,超級柴油，並設定線條顏色為 紅色 黃色 淡藍色 綠色，設定圖例位置在左上角
+plt.plot(df2[df2.columns[0]], df2[df2.columns[1]], label='92無鉛汽油', color='red')
+plt.plot(df2[df2.columns[0]], df2[df2.columns[2]], label='95無鉛汽油', color='yellow')
+plt.plot(df2[df2.columns[0]], df2[df2.columns[3]], label='98無鉛汽油', color='lightblue')
+plt.plot(df2[df2.columns[0]], df2[df2.columns[4]], label='超級柴油', color='green')
 plt.legend(loc='upper left')
 plt.show()
 
