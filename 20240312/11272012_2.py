@@ -8,7 +8,7 @@ df = pd.read_excel('112年1-10月交通事故簡訊通報資料.xlsx', engine='o
 df = df[df['國道名稱'] == '國道3號']
 
 # 篩選方向為南及南向的資料
-df = df[(df['方向'] == '北') | (df['方向'] == '北向')]
+df = df[(df['方向'] == '南') | (df['方向'] == '南向')]
 
 # 將文件中的 年 月 日 時 分 欄位合併成一個欄位，轉換為日期格式
 df['事件開始'] = df['年'].astype(str) + '-' + df['月'].astype(str) + '-' + df['日'].astype(str) + ' ' + df['時'].astype(str) + ':' + df['分'].astype(str)
@@ -30,7 +30,7 @@ for index, row in df.iterrows():
     plt.plot([row['事件開始'], row['事件結束']], [row['里程'], row['里程']])
     
 #  標題為 '國道1號 南向 交通事故' 加上 學號 : 11272012
-plt.title('國道3號 北向 交通事故 學號 : 11272012')
+plt.title('國道3號 南向 交通事故 學號 : 11272012')
 
 # 設定中文顯示
 plt.rcParams['font.sans-serif'] = ['Microsoft JhengHei']
