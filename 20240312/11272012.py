@@ -1,7 +1,7 @@
 import pandas as pd
 
 # 讀取 Excel 文件
-df = pd.read_excel('112年1-10月交通事故簡訊通報資料.xlsx', engine='openpyxl')
+df = pd.read_excel('./20240312/112年1-10月交通事故簡訊通報資料.xlsx', engine='openpyxl')
 
 # 過濾出國道名稱為國道一號且方向為南或南向的資料
 filtered_df = df[(df['國道名稱'] == '國道1號') & (df['方向'].isin(['南', '南向']))]
