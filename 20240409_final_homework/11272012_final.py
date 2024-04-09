@@ -72,36 +72,3 @@ TimestampedGeoJson(
 # 儲存地圖
 taiwan_map.save('taiwan_map.html')
 
-
-
-
-
-
-
-
-
-
-# # 遍歷 selected_data 中的每一行
-# for index, row in selected_data.iterrows():
-#     # 根據地震規模設定顏色
-#     rgba_color = cmap(row['規模'] / selected_data['規模'].max())
-#     # 將 RGBA 格式的顏色轉換為十六進制碼
-#     color = colors.rgb2hex(rgba_color)
-    
-#     # 建立彈出窗口的資訊
-#     popup_text = f"地震時間：{row['地震時間']}<br>規模：{row['規模']}<br>經度：{row['經度']}<br>緯度：{row['緯度']}<br>位置：{row['位置']}"
-#     popup = folium.Popup(popup_text, max_width=200)
-    
-#     # 使用 folium.CircleMarker 畫出地震活動點位
-#     folium.CircleMarker(
-#         location=[row['緯度'], row['經度']], # 地點
-#         radius=row['規模']*2, # 圓點半徑根據地震規模設定
-#         color=color, # 圓點顏色根據地震規模設定
-#         fill=True,
-#         fill_color=color, # 填充顏色根據地震規模設定
-#         fill_opacity=0.6, # 透明度
-#         popup=popup # 添加彈出窗口
-#     ).add_to(taiwan_map)
-
-# # 儲存地圖
-# taiwan_map.save('taiwan_map.html')
